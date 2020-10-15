@@ -2,7 +2,6 @@ import React from 'react';
 import { Route } from "react-router-dom";
 
 import AboutPage from './containers/About';
-import Team from './containers/Developers';
 import ServicesPage from './containers/Services';
 import Home from './containers/HomePage';
 import ContactPage from './components/ContactForm';

@@ -2,10 +2,11 @@ import React from "react";
 
 import TopNavbar from "../components/navigation/Navbar";
 
-const BaseLayout = () => {
+const BaseLayout = (props) => {
 	return(
-		<div>
+		<div className="mt-4">
 			<TopNavbar />
+      { props.children }
 		</div>
 		)
 }
