@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, Form, FormControl, Nav, Navbar } from 'react-bootstrap';
+import { Button, Nav, Navbar } from 'react-bootstrap';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 class TopNavbar extends Component {
@@ -16,18 +16,17 @@ render() {
     <Router>
       <div>
         <Navbar bg="primary" variant="dark">
-        <Navbar.Brand href="/">Tech Dome</Navbar.Brand>
+        <Navbar.Brand href="/">HAYATUL</Navbar.Brand>
         <Nav className="mr-auto">
           <Nav.Link href="/">Home</Nav.Link>
-          <Nav.Link href="#features">Services</Nav.Link>
-          <Nav.Link href="#features">Developers</Nav.Link>
-          <Nav.Link href="/about">About</Nav.Link>
-          <Nav.Link href="/contact">Contact</Nav.Link>
+          <Nav.Link href="#features">Huduma</Nav.Link>
+          <Nav.Link href="#features">Blogu</Nav.Link>
+          <Nav.Link href="/about">Kuhusu</Nav.Link>
+          <Nav.Link href="/contact">Mawasiliano</Nav.Link>
         </Nav>
-        <Form inline>
-          <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-          <Button variant="outline-light">Search</Button>
-        </Form>
+        <Nav>
+          <Nav.Link href="/login"><Button variant="outline-light">Ingia</Button></Nav.Link>
+        </Nav>
       </Navbar>
 
       </div>
