@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { MDBRow, MDBCol, MDBCard, MDBCardBody, MDBMask, MDBIcon, MDBView, MDBBtn } from "mdbreact";
 
 const BlogList = (props) => {
@@ -30,7 +31,7 @@ const articles = props.data;
               by <a href="#!" className="font-weight-bold">Jessica Clark</a>, 19/04/2018
             </p>
             <MDBBtn color="primary" size="md">
-              Read More
+              <a href={`/blog/${article.id}` }>Read More</a>
             </MDBBtn>
           </MDBCol>
         </MDBRow>

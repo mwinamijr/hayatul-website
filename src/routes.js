@@ -6,6 +6,7 @@ import BlogListPage from './containers/Blog';
 import ServicesPage from './containers/Services';
 import Home from './containers/HomePage';
 import ContactPage from './components/ContactForm';
+import BlogDetail from './components/BlogDetail';
 
 const BaseRouter = () => {
 	return (
@@ -13,6 +14,7 @@ const BaseRouter = () => {
 				<Route exact path="/" component={Home} />
 				<Route exact path="/about/" component={AboutPage} />
 				<Route exact path="/blog/" component={BlogListPage} />
+				<Route exact path="/blog/:articleID/" component={BlogDetail} />
 				<Route exact path="/contact/" component={ContactPage} />
 				<Route exact path="/services/" component={ServicesPage} />
 			</div>

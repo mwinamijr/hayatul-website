@@ -1,8 +1,10 @@
 import React, { Component } from "react";
-import { Button, Nav, Navbar } from 'react-bootstrap';
+import { Nav, Navbar } from 'react-bootstrap';
 import { BrowserRouter as Router } from 'react-router-dom';
 
-class TopNavbar extends Component {
+import { MDBIcon } from 'mdbreact';
+
+class NavbarPage extends Component {
 state = {
   isOpen: false
 };
@@ -15,19 +17,36 @@ render() {
   return (
     <Router>
       <div>
-        <Navbar bg="primary" variant="dark">
-        <Navbar.Brand href="/">HAYATUL</Navbar.Brand>
-        <Nav className="mr-auto">
-          <Nav.Link href="/">Home</Nav.Link>
-          <Nav.Link href="#features">Huduma</Nav.Link>
-          <Nav.Link href="/blog">Blogu</Nav.Link>
-          <Nav.Link href="/about">Kuhusu</Nav.Link>
-          <Nav.Link href="/contact">Mawasiliano</Nav.Link>
-        </Nav>
-        <Nav>
-          <Nav.Link href="/login"><Button variant="outline-light">Ingia</Button></Nav.Link>
-        </Nav>
-      </Navbar>
+      <Navbar collapseOnSelect expand="lg" bg="info" variant="dark">
+          <Navbar.Brand href="/">HAYATUL</Navbar.Brand>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav className="mr-auto">
+            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="/services">Services</Nav.Link>
+            <Nav.Link href="/blog">Blog</Nav.Link>
+            <Nav.Link href="/about">About</Nav.Link>
+            <Nav.Link href="/contact">Contact</Nav.Link>
+            </Nav>
+            <div>
+            <a href="https://facebook.com/hayatulislamiya" target="_blank" rel="noopener noreferrer" className="fb-ic mr-3 black-text">
+              <MDBIcon fab icon="facebook-f" />
+            </a>
+            <a href="https://twitter.com/hayatulislamiya" target="_blank" rel="noopener noreferrer" className="tw-ic mr-3 black-text">
+              <MDBIcon fab icon="twitter" />
+            </a>
+            <a href="#!" className="li-ic mr-3 black-text">
+              <MDBIcon fab icon="linkedin-in" />
+            </a>
+            <a href="https://instagram.com/thayatulislamiya" target="_blank" rel="noopener noreferrer" className="ins-ic mr-3 black-text">
+              <MDBIcon fab icon="instagram" />
+            </a>
+            <a href="https://www.youtube.com/channel/UCgpGjY3Rd97l53n8r_sSwBQ" target="_blank" rel="noopener noreferrer" className="yt-ic mr-3 black-text">
+              <MDBIcon fab icon="youtube" />
+            </a>
+            </div>
+          </Navbar.Collapse>
+        </Navbar>
 
       </div>
     </Router>
@@ -35,4 +54,4 @@ render() {
   }
 }
 
-export default TopNavbar;
+export default NavbarPage;
