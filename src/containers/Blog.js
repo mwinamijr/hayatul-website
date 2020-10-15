@@ -21,7 +21,7 @@ class BlogListPage extends React.Component {
 
   render() {
     return(
-      <BlogList />
+      <BlogList data={this.state.articles} />
       )
   }
 }
