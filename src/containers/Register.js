@@ -71,7 +71,7 @@ class ClassicFormPage extends React.Component {
                 <MDBCollapse id='navbarCollapse' isOpen={collapseID} navbar>
                   <MDBNavbarNav left>
                     <MDBNavItem active>
-                      <MDBNavLink to='#!'>Home</MDBNavLink>
+                      <MDBNavLink to='/'>Home</MDBNavLink>
                     </MDBNavItem>
                     <MDBNavItem>
                       <MDBNavLink to='#!'>Link</MDBNavLink>
