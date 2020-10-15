@@ -20,7 +20,7 @@ render() {
         <Nav className="mr-auto">
           <Nav.Link href="/">Home</Nav.Link>
           <Nav.Link href="#features">Huduma</Nav.Link>
-          <Nav.Link href="#features">Blogu</Nav.Link>
+          <Nav.Link href="/blog">Blogu</Nav.Link>
           <Nav.Link href="/about">Kuhusu</Nav.Link>
           <Nav.Link href="/contact">Mawasiliano</Nav.Link>
         </Nav>
