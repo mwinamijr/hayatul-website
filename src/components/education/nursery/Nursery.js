@@ -35,6 +35,11 @@ const Nursery = () => {
                         Hayatul Islamiya imekuwa ikitoa elimu ya wali kwa ubora wa hali ya juu kabisa,
                         tumekuwa tukitoa elimu hii kwa gharama nafuu kabisa kuanzia mwaka 1998.
                       </h6>
+                      <hr className="hr-light" />
+                      <h6 className="mb-4">
+                        Hayatul Islamiya imekuwa ikitoa elimu ya wali kwa ubora wa hali ya juu kabisa,
+                        tumekuwa tukitoa elimu hii kwa gharama nafuu kabisa kuanzia mwaka 1998.
+                      </h6>
                       <MDBBtn outline color="white">
                         Zaidi ...
                       </MDBBtn>
