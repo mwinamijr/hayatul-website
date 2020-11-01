@@ -8,7 +8,7 @@ import {
   MDBContainer,
   MDBAnimation
 } from "mdbreact";
-import "./nursery.css";
+import "../nursery/nursery.css";
 
 const Nursery = () => {
   

@@ -9,6 +9,7 @@ import ContactPage from './components/ContactForm';
 import BlogDetail from './components/BlogDetail';
 
 import Nursery from './components/education/nursery/Nursery';
+import Primary from './components/education/primary/Primary';
 
 const BaseRouter = () => {
 	return (
@@ -21,6 +22,7 @@ const BaseRouter = () => {
 				<Route exact path="/services/" component={ServicesPage} />
 
 				<Route exact path="/education/nursery/" component={Nursery} />
+				<Route exact path="/education/primary/" component={Primary} />
 			</div>
 		)
 }

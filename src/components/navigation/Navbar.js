@@ -27,7 +27,7 @@ render() {
             <Nav.Link href="/blog">Blog</Nav.Link>
             <NavDropdown title="Education" id="basic-nav-dropdown">
               <NavDropdown.Item href="/education/nursery">Nursery</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">Primary</NavDropdown.Item>
+              <NavDropdown.Item href="/education/primary">Primary</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.3">Secondary</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
