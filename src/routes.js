@@ -8,6 +8,8 @@ import Home from './containers/HomePage';
 import ContactPage from './components/ContactForm';
 import BlogDetail from './components/BlogDetail';
 
+import Nursery from './components/education/nursery/Nursery';
+
 const BaseRouter = () => {
 	return (
 			<div>
@@ -17,6 +19,8 @@ const BaseRouter = () => {
 				<Route exact path="/blog/:articleID/" component={BlogDetail} />
 				<Route exact path="/contact/" component={ContactPage} />
 				<Route exact path="/services/" component={ServicesPage} />
+
+				<Route exact path="/education/nursery/" component={Nursery} />
 			</div>
 		)
 }
