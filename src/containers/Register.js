@@ -1,13 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
 import {
-  MDBNavbar,
-  MDBNavbarBrand,
-  MDBNavbarNav,
-  MDBNavItem,
-  MDBNavLink,
-  MDBNavbarToggler,
-  MDBCollapse,
   MDBMask,
   MDBRow,
   MDBCol,
@@ -18,7 +10,6 @@ import {
   MDBCard,
   MDBCardBody,
   MDBInput,
-  MDBFormInline,
   MDBAnimation
 } from 'mdbreact';
 import './ClassicFormPage.css';
@@ -52,55 +43,6 @@ class ClassicFormPage extends React.Component {
     );
     return (
       <div id='classicformpage'>
-        <Router>
-          <div>
-            <MDBNavbar
-              dark
-              expand='md'
-              scrolling
-              fixed='top'
-              style={{ marginTop: '65px' }}
-            >
-              <MDBContainer>
-                <MDBNavbarBrand>
-                  <strong className='white-text'>MDB</strong>
-                </MDBNavbarBrand>
-                <MDBNavbarToggler
-                  onClick={this.toggleCollapse('navbarCollapse')}
-                />
-                <MDBCollapse id='navbarCollapse' isOpen={collapseID} navbar>
-                  <MDBNavbarNav left>
-                    <MDBNavItem active>
-                      <MDBNavLink to='/'>Home</MDBNavLink>
-                    </MDBNavItem>
-                    <MDBNavItem>
-                      <MDBNavLink to='#!'>Link</MDBNavLink>
-                    </MDBNavItem>
-                    <MDBNavItem>
-                      <MDBNavLink to='#!'>Profile</MDBNavLink>
-                    </MDBNavItem>
-                  </MDBNavbarNav>
-                  <MDBNavbarNav right>
-                    <MDBNavItem>
-                      <MDBFormInline waves>
-                        <div className='md-form my-0'>
-                          <input
-                            className='form-control mr-sm-2'
-                            type='text'
-                            placeholder='Search'
-                            aria-label='Search'
-                          />
-                        </div>
-                      </MDBFormInline>
-                    </MDBNavItem>
-                  </MDBNavbarNav>
-                </MDBCollapse>
-              </MDBContainer>
-            </MDBNavbar>
-            {collapseID && overlay}
-          </div>
-        </Router>
-
         <MDBView>
           <MDBMask className='d-flex justify-content-center align-items-center gradient' />
           <MDBContainer

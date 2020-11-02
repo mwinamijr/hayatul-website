@@ -32,7 +32,7 @@ render() {
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link href="/health">Health</Nav.Link>
+            <Nav.Link href="/health/progress">Health</Nav.Link>
             <Nav.Link href="/about">About</Nav.Link>
             <Nav.Link href="/contact">Contact</Nav.Link>
             </Nav>

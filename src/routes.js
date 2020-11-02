@@ -11,6 +11,9 @@ import BlogDetail from './components/BlogDetail';
 import Nursery from './components/education/nursery/Nursery';
 import Primary from './components/education/primary/Primary';
 
+import Health from './components/health/HealthProgress';
+
+
 const BaseRouter = () => {
 	return (
 			<div>
@@ -23,6 +26,9 @@ const BaseRouter = () => {
 
 				<Route exact path="/education/nursery/" component={Nursery} />
 				<Route exact path="/education/primary/" component={Primary} />
+
+				<Route exact path="/health/progress/" component={Health} />
+
 			</div>
 		)
 }
