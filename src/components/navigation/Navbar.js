@@ -46,7 +46,7 @@ render() {
             <a href="#!" className="li-ic mr-3 black-text">
               <MDBIcon fab icon="linkedin-in" />
             </a>
-            <a href="https://instagram.com/thayatulislamiya" target="_blank" rel="noopener noreferrer" className="ins-ic mr-3 black-text">
+            <a href="https://instagram.com/hayatulislamiya" target="_blank" rel="noopener noreferrer" className="ins-ic mr-3 black-text">
               <MDBIcon fab icon="instagram" />
             </a>
             <a href="https://www.youtube.com/channel/UCgpGjY3Rd97l53n8r_sSwBQ" target="_blank" rel="noopener noreferrer" className="yt-ic mr-3 black-text">

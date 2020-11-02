@@ -6,12 +6,12 @@ const ContactPage = () => {
     <MDBCard className="my-5 px-1 pb-5 text-center">
       <MDBCardBody>
           <h2 className="h1-responsive font-weight-bold my-5">
-            Our amazing team
+            Wasiliana nasi kwa maelezo zaidi
           </h2>
           <p className="grey-text w-responsive mx-auto mb-5">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit,
-            error amet numquam iure provident voluptate esse quasi, veritatis
-            totam voluptas nostrum quisquam eum porro a pariatur veniam.
+            Ili kupata ufafanuzi wa kina juu ya jambo lolote, Tuandikie
+            ujumbe wako au wasiliana nasi kwa namba za simu zilizopo hapa chini au kwa kutufuata
+            katika kurasa zetu za mitandao ya kijamii
           </p>
         </MDBCardBody>
         <MDBRow>
@@ -19,7 +19,7 @@ const ContactPage = () => {
             <MDBCardBody className="form">
               <h3 className="mt-4 text-left">
                 <MDBIcon icon="envelope" className="pr-2" />
-                Write to us:
+                Tuandikie Ujumbe:
               </h3>
               <MDBRow>
                 <MDBCol md="6">
@@ -27,7 +27,7 @@ const ContactPage = () => {
                     <MDBInput
                       type="text"
                       id="form-contact-name"
-                      label="Your name"
+                      label="Jina Lako"
                     />
                   </div>
                 </MDBCol>
@@ -36,7 +36,7 @@ const ContactPage = () => {
                     <MDBInput
                       type="text"
                       id="form-contact-email"
-                      label="Your email"
+                      label="Barua pepe"
                     />
                   </div>
                 </MDBCol>
@@ -47,16 +47,7 @@ const ContactPage = () => {
                     <MDBInput
                       type="text"
                       id="form-contact-phone"
-                      label="Your phone"
-                    />
-                  </div>
-                </MDBCol>
-                <MDBCol md="6">
-                  <div className="md-form mb-0">
-                    <MDBInput
-                      type="text"
-                      id="form-contact-company"
-                      label="Your company"
+                      label="Simu"
                     />
                   </div>
                 </MDBCol>
@@ -67,7 +58,7 @@ const ContactPage = () => {
                     <MDBInput
                       type="textarea"
                       id="form-contact-message"
-                      label="Your message"
+                      label="Ujumbe wako"
                     />
                     <MDBBtn rounded color="blue">
                       <MDBIcon icon="paper-plane" />
@@ -80,40 +71,57 @@ const ContactPage = () => {
           <MDBCol lg="4">
             <MDBCardBody className="contact text-center h-100 black-text">
               <h3 className="my-4 pb-2">Contact information</h3>
+              <hr /><br />
               <ul className="text-lg-left list-unstyled ml-4">
                 <li>
                   <p>
                     <MDBIcon icon="map-marker-alt" className="pr-2" />
-                    New York, 94126 USA
+                    Bonga, Babati - Manyara
                   </p>
                 </li>
                 <li>
                   <p>
-                    <MDBIcon icon="phone" className="pr-2" />+ 01 234 567 89
+                    <MDBIcon icon="phone" className="pr-2" />+255 752 506 523
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <MDBIcon icon="phone" className="pr-2" />+255 788 030 052
                   </p>
                 </li>
                 <li>
                   <p>
                     <MDBIcon icon="envelope" className="pr-2" />
-                    contact@example.com
+                    S.L.P. 507, Babati - Manyara
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <MDBIcon icon="envelope" className="pr-2" />
+                    hayatulislamiyass@gmail.com
                   </p>
                 </li>
               </ul>
               <hr className="hr-light my-4" />
               <ul className="list-inline text-center list-unstyled">
                 <li className="list-inline-item">
-                  <a href="#!" className="p-2 fa-lg w-ic">
+                  <a href="https://twitter.com/hayatulislamiya" className="p-2 fa-lg w-ic">
                     <MDBIcon fab icon="twitter" />
                   </a>
                 </li>
                 <li className="list-inline-item">
-                  <a href="#!" className="p-2 fa-lg w-ic">
-                    <MDBIcon fab icon="linkedin-in" />
+                  <a href="https://instagram.com/hayatulislamiya" className="p-2 fa-lg w-ic">
+                    <MDBIcon fab icon="instagram" />
                   </a>
                 </li>
                 <li className="list-inline-item">
-                  <a href="#!" className="p-2 fa-lg w-ic">
-                    <MDBIcon fab icon="instagram" />
+                  <a href="https://facebook.com/hayatulislamiya" className="p-2 fa-lg w-ic">
+                    <MDBIcon fab icon="facebook" />
+                  </a>
+                </li>
+                <li className="list-inline-item">
+                  <a href="https://www.youtube.com/channel/UCgpGjY3Rd97l53n8r_sSwBQ" className="p-2 fa-lg w-ic">
+                    <MDBIcon fab icon="youtube" />
                   </a>
                 </li>
               </ul>
