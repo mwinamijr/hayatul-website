@@ -43,13 +43,13 @@ const articles = props.data;
     <MDBCard className="my-5 px-5 pb-5">
       <MDBCardBody>
         <h2 className="h1-responsive font-weight-bold text-center my-5">
-          Recent posts
+          Taarifa Mabalimbali
         </h2>
         <p className="text-center w-responsive mx-auto mb-5">
-          Duis aute irure dolor in reprehenderit in voluptate velit esse
-          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-          cupidatat non proident, sunt in culpa qui officia deserunt mollit
-          anim id est laborum.
+          Hapa utapata taarifa zote mpya kuhusu yale yote yanayoendelea an 
+          kutokea katika taasisi ya Hayatul Islamiya Complex. Hii inajumuisha 
+          shule zetu zote 
+          (Shule ya Awali, Shule ya Msingi na Shule ya Sekondari)
         </p>
 
           { listItems }
