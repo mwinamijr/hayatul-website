@@ -28,7 +28,7 @@
 }
 
 #apppage .view {
-  background-image: url("https://mdbootstrap.com/img/Photos/Others/architecture.jpg");
+  background-image: url("http://127.0.0.1:8000/media/hayatul/20200918_100730.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;

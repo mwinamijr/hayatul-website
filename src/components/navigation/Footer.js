@@ -7,7 +7,7 @@ const FooterPage = () => {
       <MDBContainer fluid className="text-center text-md-left">
         <MDBRow>
           <MDBCol md="6">
-            <h5 className="title">Hayatul Islmaiya</h5>
+            <h5 className="title">Hayatul Islamiya</h5>
             <p>
               Pata fursa ya kutembelea sehemu mbalimbali nakujionea mambo yote yanayo patikana
               haya katika taasisi yaetu.
