@@ -137,12 +137,12 @@ const ServicesPage = () => {
                <strong>Kituo cha Afya</strong> ili tuwe huru katika utoaji wa huduma 
                hii huku tukiwa tunamcha Allah(S.W.)
             </p>
-            
+            <Link to="/health/progress">
             <MDBBtn color="indigo" size="md" className="waves-light ">
-              <Link to="/health/progress">
+              
               Zaidi ...
-              </Link>
             </MDBBtn>
+            </Link>
           </MDBCol>
         </MDBRow>
       </MDBCardBody>

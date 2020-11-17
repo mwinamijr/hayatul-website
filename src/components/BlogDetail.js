@@ -1,8 +1,8 @@
 import React from "react";
 import axios from 'axios';
 
-import { MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardBody, MDBMask,
-MDBListGroup, MDBListGroupItem, MDBIcon, MDBView, MDBBtn } from "mdbreact";
+import { MDBContainer, MDBRow, MDBCol, MDBMask,
+MDBListGroup, MDBListGroupItem, MDBView } from "mdbreact";
 
 class BlogDetail extends React.Component {
 
