@@ -10,6 +10,8 @@ import BlogDetail from './components/BlogDetail';
 
 import Nursery from './components/education/nursery/Nursery';
 import Primary from './components/education/primary/Primary';
+import Religion from './components/education/ReligiousEd';
+import Secular from './components/education/SecularEd';
 
 import Health from './components/health/HealthProgress';
 
@@ -26,6 +28,8 @@ const BaseRouter = () => {
 
 				<Route exact path="/education/nursery/" component={Nursery} />
 				<Route exact path="/education/primary/" component={Primary} />
+				<Route exact path="/education/religion/" component={Religion} />
+				<Route exact path="/education/secular/" component={Secular} />
 
 				<Route exact path="/health/progress/" component={Health} />
 

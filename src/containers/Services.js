@@ -49,10 +49,11 @@ const ServicesPage = () => {
               katika kutoa elimu kwa vijana wetu, elimu ya dini imekuwa ni kipaumbele 
               cha kwanza katika utoaji wa elimu kwa ngazi zote za elimu.
             </p>
-            
+            <Link to="/education/religion">
             <MDBBtn color="success" size="md" className="waves-light ">
-              Read more
+              Zaidi ...
             </MDBBtn>
+            </Link>
           </MDBCol>
         </MDBRow>
         <hr className="my-5" />
@@ -76,13 +77,11 @@ const ServicesPage = () => {
                kikamilifu.
             </p>
             
-            <MDBBtn
-              color="pink"
-              size="md"
-              className="mb-lg-0 mb-4 waves-light"
-            >
-              Read more
+            <Link to="/education/secular">
+            <MDBBtn color="success" size="md" className="waves-light ">
+              Zaidi ...
             </MDBBtn>
+            </Link>
           </MDBCol>
           <MDBCol lg="5">
             <MDBView className="rounded z-depth-2 mb-lg-0 mb-4" hover waves>
@@ -139,7 +138,6 @@ const ServicesPage = () => {
             </p>
             <Link to="/health/progress">
             <MDBBtn color="indigo" size="md" className="waves-light ">
-              
               Zaidi ...
             </MDBBtn>
             </Link>
