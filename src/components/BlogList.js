@@ -49,7 +49,8 @@ const articles = props.data;
           Hapa utapata taarifa zote mpya kuhusu yale yote yanayoendelea an 
           kutokea katika taasisi ya Hayatul Islamiya Complex. Hii inajumuisha 
           shule zetu zote 
-          (Shule ya Awali, Shule ya Msingi na Shule ya Sekondari)
+          (Shule ya Awali, Shule ya Msingi na Shule ya Sekondari). Pia utapata fursa ya 
+          kujua maendeleo ya ujenzi wa zahanati mpya ya Hayatul Islamiya.
         </p>
 
           { listItems }

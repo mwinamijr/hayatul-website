@@ -17,12 +17,12 @@ const SecularEd = () => {
       </p>
 
       <MDBRow>
-        <MDBCol md='12' className='mb-2'>
+        <MDBCol md='6' className='mb-2'>
           <MDBCard
             className='card-image'
             style={{
               backgroundImage:
-                'url()'
+                'url(https://mdbootstrap.com/img/Photos/Horizontal/Nature/6-col/img%20%2873%29.jpg)'
             }}
           >
             <div className='text-white text-center d-flex flex-column align-items-center rgba-black-strong py-5 px-4 rounded'>
@@ -57,12 +57,12 @@ const SecularEd = () => {
             </div>
           </MDBCard>
         </MDBCol>
-        <MDBCol md='12' className='mb-4'>
+        <MDBCol md='6' className='mb-4'>
           <MDBCard
             className='card-image'
             style={{
               backgroundImage:
-                'url()'
+                'url(https://mdbootstrap.com/img/Photos/Horizontal/Nature/6-col/img%20%2873%29.jpg)'
             }}
           >
             <div className='text-white text-center d-flex flex-column align-items-center rgba-black-strong py-5 px-4 rounded'>
@@ -100,7 +100,7 @@ const SecularEd = () => {
             </div>
           </MDBCard>
         </MDBCol>
-        <MDBCol md='12' className='mb-4'>
+        <MDBCol md='6' className='mb-4'>
           <MDBCard
             className='card-image'
             style={{
@@ -157,7 +157,7 @@ const SecularEd = () => {
             </div>
           </MDBCard>
         </MDBCol>
-        <MDBCol md='12' className='mb-4'>
+        <MDBCol md='6' className='mb-4'>
           <MDBCard
             className='card-image'
             style={{

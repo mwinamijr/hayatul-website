@@ -1,22 +1,40 @@
 import React from 'react';
-import { Steps, Button, message } from 'antd';
-
+import { Steps, Button, message,  Spin, Space } from 'antd';
+import Introduction from './utangulizi';
+import Ujenzi from './ujenzi';
 import './health.css';
 
 const { Step } = Steps;
 
 const steps = [
   {
-    title: 'First',
-    content: 'First-content',
+    title: 'Utangulizi',
+    content: [
+    <div>
+      <Introduction />
+    </div>],
   },
   {
-    title: 'Second',
-    content: 'Second-content',
+    title: 'Vifaa na maandalizi',
+    content: <div>
+      <Ujenzi />
+    </div>,
   },
   {
-    title: 'Last',
-    content: 'Last-content',
+    title: 'Ujenzi awamu ya kwanza',
+    content: <div>
+    <Space size="middle">
+      <Spin size="large" />
+    </Space>
+  </div>,
+  },
+  {
+    title: 'Ujenzi awamu ya pili',
+    content: <div>
+      <Space size="middle">
+        <Spin size="large" />
+      </Space>
+    </div>,
   },
 ];
 

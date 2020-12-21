@@ -18,7 +18,7 @@ const Carousel = () => {
             <MDBView>
               <img
                 className="d-block w-100"
-                src="http://127.0.0.1:8000/media/hayatul/20200918_100448.jpg"
+                src="http://127.0.0.1:8000/media/carousel/20200921_093334.jpg"
                 alt="First slide"
               />
             </MDBView>
@@ -31,7 +31,7 @@ const Carousel = () => {
             <MDBView>
               <img
                 className="d-block w-100"
-                src="http://127.0.0.1:8000/media/hayatul/20200918_100730.jpg"
+                src="http://127.0.0.1:8000/media/primary/20201128_092423.jpg"
                 alt="Second slide"
               />
             </MDBView>
@@ -44,7 +44,7 @@ const Carousel = () => {
             <MDBView>
               <img
                 className="d-block w-100"
-                src="http://127.0.0.1:8000/media/hayatul/20200918_100744.jpg"
+                src="http://127.0.0.1:8000/media/nursery/20201128_091608.jpg"
                 alt="Third slide"
               />
             </MDBView>
