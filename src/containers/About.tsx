@@ -1,25 +1,25 @@
 import React from "react";
-import { FaShare, FaChartArea, FaBook } from "react-icons/fa";
+import { FaShare, FaChartArea, FaBook, FaPlusCircle, FaPlusSquare, FaBookDead, FaBookMedical, FaStethoscope, FaBookOpen, FaSearchDollar, FaBusinessTime, FaCompass, FaMapSigns } from "react-icons/fa";
 
 const AboutPage: React.FC = () => {
   const purposes = [
     {
-      icon: <FaShare className="text-teal-500 w-6 h-6" />,
+      icon: <FaBookOpen className="text-teal-500 w-6 h-6" />,
       title: "Elimu",
       text: "Kujenga, kusimamia na kugharamia uendeshaji wa miradi ya elimu kuanzia Shule za Awali, za Msingi na za Sekondari.",
     },
     {
-      icon: <FaShare className="text-teal-500 w-6 h-6" />,
+      icon: <FaStethoscope className="text-teal-500 w-6 h-6" />,
       title: "Afya",
       text: "Kujenga, kusimamia na kugharamia uendeshaji wa miradi ya Afya kuanzia Zahanati hadi vituo vya afya na hospitali.",
     },
     {
-      icon: <FaShare className="text-teal-500 w-6 h-6" />,
+      icon: <FaSearchDollar className="text-teal-500 w-6 h-6" />,
       title: "Udhamini",
       text: "Kudhamini na kugharamia elimu kwa vijana wa kiislamu wenye uwezo wa kuendelea na masomo lakini hawana uwezo wa kugharamia elimu hiyo.",
     },
     {
-      icon: <FaShare className="text-teal-500 w-6 h-6" />,
+      icon: <FaBusinessTime className="text-teal-500 w-6 h-6" />,
       title: "Kilimo na Biashara",
       text: "Kutafuta na kumiliki maeneo ya kilimo ili kulima mazao ya chakula na mboga zitakazotumika katika vitengo vya Jumuiya ili kupunguza gharama za uendeshaji.",
     },
@@ -74,14 +74,14 @@ const AboutPage: React.FC = () => {
       {/* Vision & Mission */}
       <div className="md:flex md:gap-12 text-center md:text-left">
         <div className="md:w-1/2 mb-12 md:mb-0 p-6 bg-white rounded-xl shadow hover:shadow-2xl transition-shadow duration-300">
-          <FaChartArea className="text-teal-500 w-12 h-12 mx-auto md:mx-0" />
+          <FaCompass className="text-teal-500 w-12 h-12 mx-auto md:mx-0" />
           <h5 className="font-bold text-xl my-4">Dira</h5>
           <p className="text-gray-600">
             Kuendeleza taasisi yenye maadili ya kiislamu inayotoa elimu, huduma za afya, na msaada kwa jamii kwa kiwango cha hali ya juu.
           </p>
         </div>
         <div className="md:w-1/2 p-6 bg-white rounded-xl shadow hover:shadow-2xl transition-shadow duration-300">
-          <FaBook className="text-teal-500 w-12 h-12 mx-auto md:mx-0" />
+          <FaMapSigns className="text-teal-500 w-12 h-12 mx-auto md:mx-0" />
           <h5 className="font-bold text-xl my-4">Dhamira</h5>
           <p className="text-gray-600">
             Kusaidia jamii na wanajumuiya wa Hayatul Islamiya Complex kupitia elimu, afya, na miradi ya maendeleo yenye uendelevu.
