@@ -26,7 +26,7 @@ const Navbar: React.FC = () => {
           <div className="flex-shrink-0 flex items-center">
             <Link
               to="/"
-              className="text-2xl font-bold text-orange-500 hover:text-orange-600 transition-colors duration-300"
+              className="text-2xl font-bold text-cyan-500 hover:text-cyan-600 transition-colors duration-300"
             >
               HAYATUL
             </Link>
@@ -36,7 +36,7 @@ const Navbar: React.FC = () => {
           <div className="flex lg:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+              className="p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-500"
             >
               <svg
                 className="h-6 w-6 text-gray-700"
@@ -77,66 +77,57 @@ const Navbar: React.FC = () => {
                 <Link
                   key={item.name}
                   to={item.link}
-                  className="py-2 px-3 rounded hover:bg-orange-50 hover:text-orange-500 transition-colors duration-300"
+                  className="py-2 px-3 rounded hover:bg-cyan-50 hover:text-cyan-500 transition-colors duration-300"
                 >
                   {item.name}
                 </Link>
               ))}
 
               {/* Dropdown */}
-              <div className="relative" ref={dropdownRef}>
-                <button
-                  onClick={() => setDropdownOpen(!dropdownOpen)}
-                  className="py-2 px-3 rounded flex items-center justify-between hover:bg-orange-50 hover:text-orange-500 transition-colors duration-300"
-                >
-                  Education
-                  <svg
-                    className="ml-1 h-4 w-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                </button>
+<div className="relative" ref={dropdownRef}>
+  <button
+    onClick={() => setDropdownOpen(!dropdownOpen)}
+    className="py-2 px-3 rounded flex items-center justify-between hover:bg-cyan-50 hover:text-cyan-500 transition-colors duration-300"
+  >
+    Education
+    <svg
+      className="ml-1 h-4 w-4"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d="M19 9l-7 7-7-7"
+      />
+    </svg>
+  </button>
 
-                <div
-                  className={`absolute left-0 bg-white text-gray-700 mt-2 rounded-lg shadow-lg min-w-[160px] z-50 ${
-                    dropdownOpen ? "block" : "hidden"
-                  }`}
-                >
-                  <Link
-                    to="/education/nursery"
-                    className="block px-4 py-2 hover:bg-orange-50 hover:text-orange-500 transition-colors duration-200"
-                  >
-                    Nursery
-                  </Link>
-                  <Link
-                    to="/education/primary"
-                    className="block px-4 py-2 hover:bg-orange-50 hover:text-orange-500 transition-colors duration-200"
-                  >
-                    Primary
-                  </Link>
-                  <Link
-                    to="/education/secondary"
-                    className="block px-4 py-2 hover:bg-orange-50 hover:text-orange-500 transition-colors duration-200"
-                  >
-                    Secondary
-                  </Link>
-                  <hr className="border-gray-200 my-1" />
-                  <Link
-                    to="/education/other"
-                    className="block px-4 py-2 hover:bg-orange-50 hover:text-orange-500 transition-colors duration-200"
-                  >
-                    Other
-                  </Link>
-                </div>
-              </div>
+  <div
+    className={`absolute left-0 bg-white text-gray-700 mt-2 rounded-lg shadow-lg min-w-[160px] z-50 ${
+      dropdownOpen ? "block" : "hidden"
+    }`}
+  >
+    {[
+      { name: "Nursery", link: "/education/nursery" },
+      { name: "Primary", link: "/education/primary" },
+      { name: "Secondary", link: "/education/secondary" },
+      { name: "Other", link: "/education/other" },
+    ].map((item) => (
+      <Link
+        key={item.name}
+        to={item.link}
+        onClick={() => setDropdownOpen(false)} // <- close dropdown on desktop
+        className="block px-4 py-2 hover:bg-cyan-50 hover:text-cyan-500 transition-colors duration-200"
+      >
+        {item.name}
+      </Link>
+    ))}
+  </div>
+</div>
+
             </div>
 
             {/* Social Icons */}
@@ -152,7 +143,7 @@ const Navbar: React.FC = () => {
                   href={item.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 rounded-full hover:bg-orange-50 hover:text-orange-500 transition-colors duration-300"
+                  className="p-2 rounded-full hover:bg-cyan-50 hover:text-cyan-500 transition-colors duration-300"
                 >
                   {item.icon}
                 </a>
@@ -176,7 +167,7 @@ const Navbar: React.FC = () => {
             <Link
               key={item.name}
               to={item.link}
-              className="py-2 px-3 rounded hover:bg-orange-50 hover:text-orange-500 transition-colors duration-300"
+              className="py-2 px-3 rounded hover:bg-cyan-50 hover:text-cyan-500 transition-colors duration-300"
               onClick={() => setIsOpen(false)}
             >
               {item.name}
@@ -187,7 +178,7 @@ const Navbar: React.FC = () => {
           <div className="relative" ref={dropdownRef}>
             <button
               onClick={() => setDropdownOpen(!dropdownOpen)}
-              className="w-full text-left py-2 px-3 rounded flex items-center justify-between hover:bg-orange-50 hover:text-orange-500 transition-colors duration-300"
+              className="w-full text-left py-2 px-3 rounded flex items-center justify-between hover:bg-cyan-50 hover:text-cyan-500 transition-colors duration-300"
             >
               Education
               <svg
@@ -207,28 +198,28 @@ const Navbar: React.FC = () => {
             <div className={`${dropdownOpen ? "block" : "hidden"} flex flex-col pl-4`}>
               <Link
                 to="/education/nursery"
-                className="py-2 px-3 rounded hover:bg-orange-50 hover:text-orange-500 transition-colors duration-200"
+                className="py-2 px-3 rounded hover:bg-cyan-50 hover:text-cyan-500 transition-colors duration-200"
                 onClick={() => setIsOpen(false)}
               >
                 Nursery
               </Link>
               <Link
                 to="/education/primary"
-                className="py-2 px-3 rounded hover:bg-orange-50 hover:text-orange-500 transition-colors duration-200"
+                className="py-2 px-3 rounded hover:bg-cyan-50 hover:text-cyan-500 transition-colors duration-200"
                 onClick={() => setIsOpen(false)}
               >
                 Primary
               </Link>
               <Link
                 to="/education/secondary"
-                className="py-2 px-3 rounded hover:bg-orange-50 hover:text-orange-500 transition-colors duration-200"
+                className="py-2 px-3 rounded hover:bg-cyan-50 hover:text-cyan-500 transition-colors duration-200"
                 onClick={() => setIsOpen(false)}
               >
                 Secondary
               </Link>
               <Link
                 to="/education/other"
-                className="py-2 px-3 rounded hover:bg-orange-50 hover:text-orange-500 transition-colors duration-200"
+                className="py-2 px-3 rounded hover:bg-cyan-50 hover:text-cyan-500 transition-colors duration-200"
                 onClick={() => setIsOpen(false)}
               >
                 Other

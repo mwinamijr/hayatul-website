@@ -1,67 +1,66 @@
 import React from "react";
 
 const services = [
-  "Huduma ya mapokezi.",
-  "Huduma ya wagonjwa wa nje.",
-  "Huduma ya maabara.",
-  "Huduma ya dawa na store.",
-  "Huduma ya afya ya uzazi na mtoto.",
-  "Huduma ya upasuaji mdogo, macho na meno.",
+  "Huduma ya mapokezi",
+  "Huduma ya wagonjwa wa nje",
+  "Huduma ya maabara",
+  "Huduma ya dawa na store",
+  "Huduma ya afya ya uzazi na mtoto",
+  "Huduma ya upasuaji mdogo, macho na meno",
 ];
 
 const constructionPhases = [
-  "Ufyetuaji wa matofali na unuliwaji wa vifaa vya ujenzi.",
-  "Ujenzi wa majengo na umaliziaji (finishing).",
-  "Ununuliwaji wa vifaa vya ndani na kuajiri wafanyakazi.",
+  "Ufyetuaji wa matofali na unuliwaji wa vifaa vya ujenzi",
+  "Ujenzi wa majengo na umaliziaji (finishing)",
+  "Ununuliwaji wa vifaa vya ndani na kuajiri wafanyakazi",
 ];
 
 const Introduction: React.FC = () => {
   return (
-    <div className="space-y-6">
-      <h1 className="text-3xl font-bold">Utangulizi</h1>
+    <section className="max-w-7xl mx-auto px-4 py-12 space-y-12">
+      {/* Header */}
+      <header className="text-center space-y-4">
+        <h1 className="text-4xl font-extrabold text-indigo-500">Utangulizi</h1>
+        <p className="text-gray-600 max-w-3xl mx-auto">
+          Sasa hivi taasisi ipo katika mkakati wa ujenzi wa zahanati ya kisasa itakayofuata masharti ya kiislamu
+          na itakayotoa huduma kwa jamii kwa mujibu wa sheria na kanuni za serikali ya Jamhuri ya Muungano wa Tanzania.
+        </p>
+      </header>
 
-      <p>
-        Kwa maana hiyo, sasa hivi taasisi ipo katika mkakati wa ujenzi wa zahanati ya
-        kisasa kabisa itakayofuata masharti ya kiislamu na itakayotoa huduma kwa
-        jamii kwa mujibu wa sheria na kanuni za serikali ya Jamhuri ya Muungano wa
-        Tanzania.
-      </p>
-
-      <p>
+      <p className="text-gray-700">
         Zahanati hii itajengwa eneo pembeni ya barabara kuu ya Babati Dodoma karibu
-        na shule ya Sekondari Hayatul longitude 4° 21’10’’ S, 35° 44’22’’ E katika eneo
-        lenye ukubwa wa mita za mraba 56 kwa 32. Zahanati yetu itajengwa kwa mujibu
+        na shule ya Sekondari Hayatul. Eneo lenye ukubwa wa mita za mraba 56 kwa 32. Zahanati itajengwa kwa mujibu
         wa zamani iliyo buniwa (redesign) kulingana na matakwa na masharti ya dini ya kiislamu.
       </p>
 
       {/* Image Row 1 */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <img
-          className="w-full rounded shadow"
-          src="http://127.0.0.1:8000/media/carousel/20200918_100730.jpg"
-          alt="Zahanati Image 1"
+          src="https://images.pexels.com/photos/4226117/pexels-photo-4226117.jpeg?auto=compress&cs=tinysrgb&w=1170"
+          alt="Reception area"
+          className="w-full h-64 md:h-80 object-cover rounded-xl shadow-lg"
         />
         <img
-          className="w-full rounded shadow"
-          src="http://127.0.0.1:8000/media/hayatul/dispensary.jpg"
-          alt="Zahanati Image 2"
+          src="https://images.pexels.com/photos/5327791/pexels-photo-5327791.jpeg?auto=compress&cs=tinysrgb&w=1170"
+          alt="Outpatient service"
+          className="w-full h-64 md:h-80 object-cover rounded-xl shadow-lg"
         />
       </div>
 
       {/* Lists */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="bg-white shadow rounded p-4">
-          <h3 className="text-xl font-bold mb-3">Huduma zitakazotolewa katika zahanati hii</h3>
-          <ul className="list-disc list-inside space-y-1">
+        <div className="bg-white shadow-lg rounded-xl p-6 hover:shadow-2xl transition-shadow duration-300">
+          <h3 className="text-2xl font-bold mb-4 text-indigo-500">Huduma zitakazotolewa</h3>
+          <ul className="list-disc list-inside space-y-2 text-gray-700">
             {services.map((item, index) => (
               <li key={index}>{item}</li>
             ))}
           </ul>
         </div>
 
-        <div className="bg-white shadow rounded p-4">
-          <h3 className="text-xl font-bold mb-3">Awamu za Ujenzi</h3>
-          <ul className="list-disc list-inside space-y-1">
+        <div className="bg-white shadow-lg rounded-xl p-6 hover:shadow-2xl transition-shadow duration-300">
+          <h3 className="text-2xl font-bold mb-4 text-indigo-500">Awamu za Ujenzi</h3>
+          <ul className="list-disc list-inside space-y-2 text-gray-700">
             {constructionPhases.map((item, index) => (
               <li key={index}>{item}</li>
             ))}
@@ -69,33 +68,30 @@ const Introduction: React.FC = () => {
         </div>
       </div>
 
-      <p>
-        Huduma zote hizi zitatolewa kwa kuzingatia jinsia, kwa maana hiyo hakutakuwa
-        na mchanganyiko wa jinsia kwenye zahanati isipokuwa sehemu chache za
-        dharura kama vile upasuaji mdogo na huduma ya macho na ya meno.
+      <p className="text-gray-700">
+        Huduma zote hizi zitatolewa kwa kuzingatia jinsia. Hakutakuwa na mchanganyiko wa jinsia
+        isipokuwa sehemu chache za dharura kama vile upasuaji mdogo na huduma ya macho na ya meno.
       </p>
 
-      <p>
-        Kama mambo yataenda kama yalivyopangwa zahanati hii ikachukua miezi kumi
-        na nane (18) mpaka kukamilika kwake. Tunatarajia zahanati hii ikikamilika itaajiri
-        zaidi ya wafanyakazi thelathini (30) na kuchochea maisha ya wana Bonga
-        kiujumla katika nyanja mbalimbali za kijamii na kiuchumi.
+      <p className="text-gray-700">
+        Tunatarajia zahanati hii ikikamilika itaajiri zaidi ya wafanyakazi 30 na kuchochea maisha ya
+        jamii katika nyanja mbalimbali za kijamii na kiuchumi.
       </p>
 
       {/* Image Row 2 */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <img
-          className="w-full rounded shadow"
-          src="http://127.0.0.1:8000/media/carousel/20200921_093334.jpg"
-          alt="Zahanati Image 3"
+          src="https://images.pexels.com/photos/5327770/pexels-photo-5327770.jpeg?auto=compress&cs=tinysrgb&w=1170"
+          alt="Laboratory"
+          className="w-full h-64 md:h-80 object-cover rounded-xl shadow-lg"
         />
         <img
-          className="w-full rounded shadow"
-          src="http://127.0.0.1:8000/media/carousel/20200921_093729.jpg"
-          alt="Zahanati Image 4"
+          src="https://images.pexels.com/photos/3845743/pexels-photo-3845743.jpeg?auto=compress&cs=tinysrgb&w=1170"
+          alt="Doctor with patient"
+          className="w-full h-64 md:h-80 object-cover rounded-xl shadow-lg"
         />
       </div>
-    </div>
+    </section>
   );
 };
 

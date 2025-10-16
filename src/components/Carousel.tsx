@@ -9,22 +9,22 @@ interface Slide {
 
 const slides: Slide[] = [
   {
-    src: "http://127.0.0.1:8000/media/carousel/20200921_093334.jpg",
-    alt: "First slide",
-    title: "Slight Mast",
-    caption: "Third text",
+    src: "https://images.pexels.com/photos/4145193/pexels-photo-4145193.jpeg?auto=compress&cs=tinysrgb&w=1170",
+    alt: "Students learning",
+    title: "Interactive Learning",
+    caption: "Engaging lessons in a modern classroom.",
   },
   {
-    src: "http://127.0.0.1:8000/media/primary/20201128_092423.jpg",
-    alt: "Second slide",
-    title: "Slight Mast",
-    caption: "Third text",
+    src: "https://images.pexels.com/photos/256657/pexels-photo-256657.jpeg?auto=compress&cs=tinysrgb&w=1170",
+    alt: "Children playing",
+    title: "Fun & Safe Environment",
+    caption: "Students thrive in a safe and enjoyable space.",
   },
   {
-    src: "http://127.0.0.1:8000/media/nursery/20201128_091608.jpg",
-    alt: "Third slide",
-    title: "Slight Mast",
-    caption: "Third text",
+    src: "https://images.pexels.com/photos/4145192/pexels-photo-4145192.jpeg?auto=compress&cs=tinysrgb&w=1170",
+    alt: "Science experiment",
+    title: "Hands-on Experience",
+    caption: "Experimental learning to spark curiosity.",
   },
 ];
 
@@ -40,12 +40,10 @@ const Carousel: React.FC = () => {
   };
 
   return (
-    <div className="w-full relative">
-      <hr className="mb-4" />
-
-      <div className="relative w-full overflow-hidden rounded-lg">
+    <div className="w-full relative my-8">
+      <div className="relative w-full overflow-hidden rounded-xl shadow-lg">
         <div
-          className="flex transition-transform duration-500"
+          className="flex transition-transform duration-700 ease-in-out"
           style={{ transform: `translateX(-${active * 100}%)` }}
         >
           {slides.map((slide, idx) => (
@@ -55,9 +53,9 @@ const Carousel: React.FC = () => {
                 alt={slide.alt}
                 className="w-full h-64 md:h-96 object-cover"
               />
-              <div className="absolute bottom-4 left-4 bg-black bg-opacity-50 text-white p-3 rounded">
-                <h3 className="text-lg font-semibold">{slide.title}</h3>
-                <p className="text-sm">{slide.caption}</p>
+              <div className="absolute bottom-4 left-4 bg-black bg-opacity-50 text-white p-4 rounded-md max-w-xs">
+                <h3 className="text-lg md:text-xl font-semibold">{slide.title}</h3>
+                <p className="text-sm md:text-base">{slide.caption}</p>
               </div>
             </div>
           ))}
@@ -82,7 +80,7 @@ const Carousel: React.FC = () => {
           {slides.map((_, idx) => (
             <button
               key={idx}
-              className={`w-3 h-3 rounded-full ${
+              className={`w-3 h-3 rounded-full transition-colors duration-300 ${
                 active === idx ? "bg-white" : "bg-gray-400"
               }`}
               onClick={() => setActive(idx)}

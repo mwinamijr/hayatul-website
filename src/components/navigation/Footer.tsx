@@ -8,7 +8,7 @@ const FooterPage: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-left">
           {/* About */}
           <div>
-            <h5 className="text-2xl font-bold mb-4 text-orange-500">Hayatul Islamiya</h5>
+            <h5 className="text-2xl font-bold mb-4 text-teal-500">Hayatul Islamiya</h5>
             <p className="text-gray-400 leading-relaxed">
               Pata fursa ya kutembelea sehemu mbalimbali na kujionea mambo yote
               yanayopatikana katika taasisi yetu.
@@ -24,7 +24,7 @@ const FooterPage: React.FC = () => {
     href="https://secondary.hayatulislamiya.com"
     target="_blank"
     rel="noopener noreferrer"
-    className="hover:text-orange-500 transition-colors duration-300"
+    className="hover:text-cyan-500 transition-colors duration-300"
   >
     Secondary SIMS
   </a>
@@ -33,7 +33,7 @@ const FooterPage: React.FC = () => {
               <li>
                 <Link
                   to="/primary-school"
-                  className="hover:text-orange-500 transition-colors duration-300"
+                  className="hover:text-cyan-500 transition-colors duration-300"
                 >
                   Shule ya Msingi
                 </Link>
@@ -41,7 +41,7 @@ const FooterPage: React.FC = () => {
               <li>
                 <Link
                   to="/secondary-school"
-                  className="hover:text-orange-500 transition-colors duration-300"
+                  className="hover:text-cyan-500 transition-colors duration-300"
                 >
                   Shule ya Sekondari
                 </Link>
@@ -49,7 +49,7 @@ const FooterPage: React.FC = () => {
               <li>
                 <Link
                   to="/other-link"
-                  className="hover:text-orange-500 transition-colors duration-300"
+                  className="hover:text-cyan-500 transition-colors duration-300"
                 >
                   Link 4
                 </Link>
@@ -66,7 +66,7 @@ const FooterPage: React.FC = () => {
                   href="https://www.necta.go.tz"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-orange-500 transition-colors duration-300"
+                  className="hover:text-cyan-500 transition-colors duration-300"
                 >
                   NECTA
                 </a>
@@ -76,7 +76,7 @@ const FooterPage: React.FC = () => {
                   href="https://www.nacte.go.tz"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-orange-500 transition-colors duration-300"
+                  className="hover:text-cyan-500 transition-colors duration-300"
                 >
                   NACTE
                 </a>
@@ -86,7 +86,7 @@ const FooterPage: React.FC = () => {
                   href="https://www.moe.go.tz"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-orange-500 transition-colors duration-300"
+                  className="hover:text-cyan-500 transition-colors duration-300"
                 >
                   Wizara ya Elimu
                 </a>
@@ -96,7 +96,7 @@ const FooterPage: React.FC = () => {
                   href="https://www.moh.go.tz"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-orange-500 transition-colors duration-300"
+                  className="hover:text-cyan-500 transition-colors duration-300"
                 >
                   Wizara ya Afya
                 </a>
@@ -112,7 +112,7 @@ const FooterPage: React.FC = () => {
             href="https://techdometz.github.io"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-orange-500 transition-colors duration-300"
+            className="hover:text-cyan-500 transition-colors duration-300"
           >
             Techdometz
           </a>
