@@ -2,7 +2,7 @@ import { fontFamily } from "tailwindcss/defaultTheme";
 import tailwindAnimate from "tailwind-animate";
 
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
   darkMode: "class", // Enable dark mode support
   content: [
     "./index.html",
