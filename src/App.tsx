@@ -1,6 +1,13 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
+//navigation
+import Navbar from "./components/navigation/Navbar";
+import Footer from "./components/navigation/Footer";
+
+
+
+
 // Pages
 import Home from "./containers/HomePage";
 import AboutPage from "./containers/About";
@@ -21,6 +28,7 @@ import Health from "./components/health/HealthProgress";
 const App: React.FC = () => {
   return (
     <Router>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutPage />} />
@@ -36,6 +44,7 @@ const App: React.FC = () => {
 
         <Route path="/health/progress" element={<Health />} />
       </Routes>
+      <Footer />
     </Router>
   );
 };

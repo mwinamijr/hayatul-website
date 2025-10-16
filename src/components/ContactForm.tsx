@@ -23,6 +23,7 @@ const ContactPage: React.FC = () => {
               <Icons.envelope className="w-6 h-6 text-blue-600" /> Tuandikie Ujumbe:
             </h3>
 
+
             <div className="grid md:grid-cols-2 gap-4">
               <input
                 type="text"

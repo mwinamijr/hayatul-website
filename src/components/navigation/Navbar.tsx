@@ -1,37 +1,45 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
-import {
-  FaFacebookF,
-  FaTwitter,
-  FaLinkedinIn,
-  FaInstagram,
-  FaYoutube,
-} from "react-icons/fa";
+import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa";
 
-const NavbarPage: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
+const Navbar: React.FC = () => {
+  const [isOpen, setIsOpen] = useState(false); // mobile menu
+  const [dropdownOpen, setDropdownOpen] = useState(false); // education dropdown
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
-  const toggleCollapse = () => setIsOpen(!isOpen);
+  // Close dropdown if clicked outside
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setDropdownOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   return (
-    <nav className="bg-blue-500 text-white">
+    <nav className="bg-white shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
+        <div className="flex justify-between items-center h-16">
           {/* Brand */}
           <div className="flex-shrink-0 flex items-center">
-            <Link to="/" className="text-2xl font-bold">
+            <Link
+              to="/"
+              className="text-2xl font-bold text-orange-500 hover:text-orange-600 transition-colors duration-300"
+            >
               HAYATUL
             </Link>
           </div>
 
           {/* Hamburger */}
-          <div className="flex items-center lg:hidden">
+          <div className="flex lg:hidden">
             <button
-              onClick={toggleCollapse}
-              className="p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-white"
+              onClick={() => setIsOpen(!isOpen)}
+              className="p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
             >
               <svg
-                className="h-6 w-6"
+                className="h-6 w-6 text-gray-700"
                 stroke="currentColor"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -55,29 +63,32 @@ const NavbarPage: React.FC = () => {
             </button>
           </div>
 
-          {/* Menu */}
-          <div
-            className={`${
-              isOpen ? "block" : "hidden"
-            } lg:flex lg:items-center lg:space-x-6 w-full lg:w-auto`}
-          >
-            <div className="flex flex-col lg:flex-row lg:space-x-6">
-              <Link to="/" className="py-2 px-3 hover:bg-blue-600 rounded">
-                Home
-              </Link>
-              <Link
-                to="/services"
-                className="py-2 px-3 hover:bg-blue-600 rounded"
-              >
-                Services
-              </Link>
-              <Link to="/blog" className="py-2 px-3 hover:bg-blue-600 rounded">
-                Blog
-              </Link>
+          {/* Desktop Menu */}
+          <div className="hidden lg:flex lg:items-center lg:space-x-6">
+            <div className="flex flex-row lg:space-x-6 items-center">
+              {[ 
+                { name: "Home", link: "/" },
+                { name: "Services", link: "/services" },
+                { name: "Blog", link: "/blog" },
+                { name: "Health", link: "/health/progress" },
+                { name: "About", link: "/about" },
+                { name: "Contact", link: "/contact" },
+              ].map((item) => (
+                <Link
+                  key={item.name}
+                  to={item.link}
+                  className="py-2 px-3 rounded hover:bg-orange-50 hover:text-orange-500 transition-colors duration-300"
+                >
+                  {item.name}
+                </Link>
+              ))}
 
               {/* Dropdown */}
-              <div className="relative group">
-                <button className="py-2 px-3 hover:bg-blue-600 rounded flex items-center justify-between w-full lg:w-auto">
+              <div className="relative" ref={dropdownRef}>
+                <button
+                  onClick={() => setDropdownOpen(!dropdownOpen)}
+                  className="py-2 px-3 rounded flex items-center justify-between hover:bg-orange-50 hover:text-orange-500 transition-colors duration-300"
+                >
                   Education
                   <svg
                     className="ml-1 h-4 w-4"
@@ -93,92 +104,135 @@ const NavbarPage: React.FC = () => {
                     />
                   </svg>
                 </button>
-                <div className="absolute left-0 hidden group-hover:block bg-white text-black mt-1 rounded shadow-lg min-w-[160px] z-50">
+
+                <div
+                  className={`absolute left-0 bg-white text-gray-700 mt-2 rounded-lg shadow-lg min-w-[160px] z-50 ${
+                    dropdownOpen ? "block" : "hidden"
+                  }`}
+                >
                   <Link
                     to="/education/nursery"
-                    className="block px-4 py-2 hover:bg-gray-200"
+                    className="block px-4 py-2 hover:bg-orange-50 hover:text-orange-500 transition-colors duration-200"
                   >
                     Nursery
                   </Link>
                   <Link
                     to="/education/primary"
-                    className="block px-4 py-2 hover:bg-gray-200"
+                    className="block px-4 py-2 hover:bg-orange-50 hover:text-orange-500 transition-colors duration-200"
                   >
                     Primary
                   </Link>
                   <Link
                     to="/education/secondary"
-                    className="block px-4 py-2 hover:bg-gray-200"
+                    className="block px-4 py-2 hover:bg-orange-50 hover:text-orange-500 transition-colors duration-200"
                   >
                     Secondary
                   </Link>
-                  <hr />
+                  <hr className="border-gray-200 my-1" />
                   <Link
                     to="/education/other"
-                    className="block px-4 py-2 hover:bg-gray-200"
+                    className="block px-4 py-2 hover:bg-orange-50 hover:text-orange-500 transition-colors duration-200"
                   >
-                    Separated link
+                    Other
                   </Link>
                 </div>
               </div>
-
-              <Link
-                to="/health/progress"
-                className="py-2 px-3 hover:bg-blue-600 rounded"
-              >
-                Health
-              </Link>
-              <Link to="/about" className="py-2 px-3 hover:bg-blue-600 rounded">
-                About
-              </Link>
-              <Link
-                to="/contact"
-                className="py-2 px-3 hover:bg-blue-600 rounded"
-              >
-                Contact
-              </Link>
             </div>
 
             {/* Social Icons */}
-            <div className="flex space-x-3 mt-3 lg:mt-0 lg:ml-4">
-              <a
-                href="https://facebook.com/hayatulislamiya"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-gray-300"
+            <div className="flex space-x-3 ml-6">
+              {[
+                { icon: <FaFacebookF />, link: "https://facebook.com/hayatulislamiya" },
+                { icon: <FaTwitter />, link: "https://twitter.com/hayatulislamiya" },
+                { icon: <FaInstagram />, link: "https://instagram.com/hayatulislamiya" },
+                { icon: <FaYoutube />, link: "https://www.youtube.com/channel/UCgpGjY3Rd97l53n8r_sSwBQ" },
+              ].map((item, idx) => (
+                <a
+                  key={idx}
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 rounded-full hover:bg-orange-50 hover:text-orange-500 transition-colors duration-300"
+                >
+                  {item.icon}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile Menu */}
+      <div className={`${isOpen ? "block" : "hidden"} lg:hidden bg-white shadow-md`}>
+        <div className="flex flex-col px-4 pt-2 pb-4 space-y-1">
+          {[ 
+            { name: "Home", link: "/" },
+            { name: "Services", link: "/services" },
+            { name: "Blog", link: "/blog" },
+            { name: "Health", link: "/health/progress" },
+            { name: "About", link: "/about" },
+            { name: "Contact", link: "/contact" },
+          ].map((item) => (
+            <Link
+              key={item.name}
+              to={item.link}
+              className="py-2 px-3 rounded hover:bg-orange-50 hover:text-orange-500 transition-colors duration-300"
+              onClick={() => setIsOpen(false)}
+            >
+              {item.name}
+            </Link>
+          ))}
+
+          {/* Mobile Dropdown */}
+          <div className="relative" ref={dropdownRef}>
+            <button
+              onClick={() => setDropdownOpen(!dropdownOpen)}
+              className="w-full text-left py-2 px-3 rounded flex items-center justify-between hover:bg-orange-50 hover:text-orange-500 transition-colors duration-300"
+            >
+              Education
+              <svg
+                className="ml-1 h-4 w-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
               >
-                <FaFacebookF />
-              </a>
-              <a
-                href="https://twitter.com/hayatulislamiya"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-gray-300"
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+            <div className={`${dropdownOpen ? "block" : "hidden"} flex flex-col pl-4`}>
+              <Link
+                to="/education/nursery"
+                className="py-2 px-3 rounded hover:bg-orange-50 hover:text-orange-500 transition-colors duration-200"
+                onClick={() => setIsOpen(false)}
               >
-                <FaTwitter />
-              </a>
-              <a
-                href="#!"
-                className="hover:text-gray-300"
+                Nursery
+              </Link>
+              <Link
+                to="/education/primary"
+                className="py-2 px-3 rounded hover:bg-orange-50 hover:text-orange-500 transition-colors duration-200"
+                onClick={() => setIsOpen(false)}
               >
-                <FaLinkedinIn />
-              </a>
-              <a
-                href="https://instagram.com/hayatulislamiya"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-gray-300"
+                Primary
+              </Link>
+              <Link
+                to="/education/secondary"
+                className="py-2 px-3 rounded hover:bg-orange-50 hover:text-orange-500 transition-colors duration-200"
+                onClick={() => setIsOpen(false)}
               >
-                <FaInstagram />
-              </a>
-              <a
-                href="https://www.youtube.com/channel/UCgpGjY3Rd97l53n8r_sSwBQ"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-gray-300"
+                Secondary
+              </Link>
+              <Link
+                to="/education/other"
+                className="py-2 px-3 rounded hover:bg-orange-50 hover:text-orange-500 transition-colors duration-200"
+                onClick={() => setIsOpen(false)}
               >
-                <FaYoutube />
-              </a>
+                Other
+              </Link>
             </div>
           </div>
         </div>
@@ -187,4 +241,4 @@ const NavbarPage: React.FC = () => {
   );
 };
 
-export default NavbarPage;
+export default Navbar;

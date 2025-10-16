@@ -1,6 +1,6 @@
 // src/components/icons.tsx
-import { HiOutlineAcademicCap, HiOutlineHeart, HiOutlineCurrencyDollar, HiOutlineShoppingBag, HiOutlineChartBar, HiOutlineBookOpen, HiOutlineEye, HiOutlinePrinter, HiOutlineBolt, HiOutlineMagnifyingGlass } from "react-icons/hi2";
-import { FaShare } from "react-icons/fa"; // Optional if you still want FA icons
+import { HiOutlineAcademicCap, HiOutlineHeart, HiOutlineCurrencyDollar, HiOutlineShoppingBag, HiOutlineChartBar, HiOutlineBookOpen, HiOutlineEye, HiOutlinePrinter, HiOutlineBolt, HiOutlineMagnifyingGlass, HiOutlineEnvelope, HiOutlinePhone, HiOutlineMapPin, HiOutlinePaperAirplane } from "react-icons/hi2";
+import { FaFacebook, FaInstagram, FaShare, FaTwitter, FaYoutube } from "react-icons/fa"; // Optional if you still want FA icons
 
 export const Icons = {
   education: HiOutlineAcademicCap,
@@ -18,5 +18,13 @@ export const Icons = {
   cocktail: HiOutlineCurrencyDollar,
   heart: HiOutlineHeart,
   bolt: HiOutlineBolt,
-  magic: HiOutlineMagnifyingGlass
+  magic: HiOutlineMagnifyingGlass,
+  envelope: HiOutlineEnvelope,
+  phone: HiOutlinePhone,
+  mapPin: HiOutlineMapPin,
+  paperPlane: HiOutlinePaperAirplane,
+  twitter: FaTwitter,
+  instagram: FaInstagram,
+  facebook: FaFacebook,
+  youtube: FaYoutube,
 };
