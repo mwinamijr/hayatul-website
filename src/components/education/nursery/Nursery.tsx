@@ -1,6 +1,15 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
+
+import playground1 from "../../../assets/images/playground1.png";
+import playground2 from "../../../assets/images/playground2.png";
 
 const Nursery: React.FC = () => {
   return (
@@ -12,21 +21,25 @@ const Nursery: React.FC = () => {
             <h1 className="text-5xl font-extrabold mb-4">Elimu ya Awali</h1>
             <hr className="border-white w-20 mb-6" />
             <p className="mb-4 text-lg">
-              Hayatul Islamiya imekuwa ikitoa elimu ya awali kwa ubora wa hali ya juu kabisa,
-              ikiwakilisha thamani ya elimu bora kwa watoto kuanzia mwaka 1998.
+              Hayatul Islamiya imekuwa ikitoa elimu ya awali kwa ubora wa hali
+              ya juu kabisa, ikiwakilisha thamani ya elimu bora kwa watoto
+              kuanzia mwaka 1998.
             </p>
             <p className="mb-6 text-lg">
-              Tunahakikisha kila mtoto anapata msingi imara wa elimu ya dini na maarifa ya kijamii
-              kwa mazingira salama na yenye upendo.
+              Tunahakikisha kila mtoto anapata msingi imara wa elimu ya dini na
+              maarifa ya kijamii kwa mazingira salama na yenye upendo.
             </p>
-            <Button variant="outline" className="text-white border-white hover:bg-white hover:text-teal-500 transition">
+            <Button
+              variant="outline"
+              className="text-white border-white hover:bg-white hover:text-teal-500 transition"
+            >
               Zaidi ...
             </Button>
           </div>
 
           <div className="md:w-1/2 animate-fade-in-right">
             <img
-              src="https://mdbootstrap.com/img/Mockups/Transparent/Small/admin-new.png"
+              src={playground1}
               alt="Elimu"
               className="w-full max-w-md mx-auto rounded-lg shadow-2xl"
             />
@@ -37,9 +50,10 @@ const Nursery: React.FC = () => {
       {/* Info Section */}
       <section className="container mx-auto px-6 py-16 text-center">
         <p className="text-gray-700 text-lg max-w-4xl mx-auto">
-          Zahanati yetu inajali maendeleo ya kila mtoto kwa kutoa elimu ya dini, maarifa ya kijamii,
-          na michezo kwa afya. Mfumo wetu wa elimu umeundwa kwa kuzingatia ubora, usalama na
-          kujenga msingi thabiti wa elimu ya maisha.
+          Zahanati yetu inajali maendeleo ya kila mtoto kwa kutoa elimu ya dini,
+          maarifa ya kijamii, na michezo kwa afya. Mfumo wetu wa elimu umeundwa
+          kwa kuzingatia ubora, usalama na kujenga msingi thabiti wa elimu ya
+          maisha.
         </p>
       </section>
 
@@ -52,7 +66,8 @@ const Nursery: React.FC = () => {
           </CardHeader>
           <CardContent>
             <CardDescription>
-              Tunatoa elimu ya dini kwa watoto kwa njia ya kufurahisha na yenye uelewa wa kina.
+              Tunatoa elimu ya dini kwa watoto kwa njia ya kufurahisha na yenye
+              uelewa wa kina.
             </CardDescription>
             <Button className="mt-4 bg-teal-600 text-white hover:bg-teal-700 transition">
               Zaidi
@@ -67,8 +82,8 @@ const Nursery: React.FC = () => {
           </CardHeader>
           <CardContent>
             <CardDescription>
-              Watoto wanapewa maarifa juu ya utunzaji wa mazingira na maisha endelevu
-              kwa njia ya michezo na shughuli za kufundisha.
+              Watoto wanapewa maarifa juu ya utunzaji wa mazingira na maisha
+              endelevu kwa njia ya michezo na shughuli za kufundisha.
             </CardDescription>
             <Button className="mt-4 bg-cyan-600 text-white hover:bg-cyan-700 transition">
               Zaidi
@@ -83,7 +98,8 @@ const Nursery: React.FC = () => {
           </CardHeader>
           <CardContent>
             <CardDescription>
-              Shughuli za michezo na mazoezi husaidia watoto kuboresha afya yao ya mwili na akili.
+              Shughuli za michezo na mazoezi husaidia watoto kuboresha afya yao
+              ya mwili na akili.
             </CardDescription>
             <Button className="mt-4 bg-indigo-600 text-white hover:bg-indigo-700 transition">
               Zaidi

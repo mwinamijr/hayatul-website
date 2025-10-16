@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import carousel1 from "../assets/images/carousel001.png";
 import carousel2 from "../assets/images/carousel002.png";
 import carousel3 from "../assets/images/carousel003.png";
@@ -13,9 +13,9 @@ interface Slide {
 const slides: Slide[] = [
   {
     src: carousel1,
-    alt: "Students learning",
-    title: "Interactive Learning",
-    caption: "Engaging lessons in a modern classroom.",
+    alt: "Science experiment",
+    title: "Hands-on Experience",
+    caption: "Experimental learning to spark curiosity.",
   },
   {
     src: carousel2,
@@ -25,9 +25,9 @@ const slides: Slide[] = [
   },
   {
     src: carousel3,
-    alt: "Science experiment",
-    title: "Hands-on Experience",
-    caption: "Experimental learning to spark curiosity.",
+    alt: "Good school facilities",
+    title: "Great Environment",
+    caption: "Our environment supports learning all the time.",
   },
 ];
 
@@ -35,12 +35,20 @@ const Carousel: React.FC = () => {
   const [active, setActive] = useState<number>(0);
 
   const prevSlide = () => {
-    setActive(active === 0 ? slides.length - 1 : active - 1);
+    setActive((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
   };
 
   const nextSlide = () => {
-    setActive(active === slides.length - 1 ? 0 : active + 1);
+    setActive((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
   };
+
+  // Auto-play effect
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 5000); // Change slide every 5 seconds
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="w-full relative my-8">
@@ -56,7 +64,7 @@ const Carousel: React.FC = () => {
                 alt={slide.alt}
                 className="w-full h-64 md:h-96 object-cover"
               />
-              <div className="absolute bottom-4 left-4 bg-black text-white p-4 rounded-md max-w-xs">
+              <div className="absolute bottom-4 left-4 bg-[#2CA3DB] bg-[#2CA3DB]/60 text-white p-4 rounded-md max-w-xs">
                 <h3 className="text-lg md:text-xl font-semibold">
                   {slide.title}
                 </h3>
@@ -67,14 +75,19 @@ const Carousel: React.FC = () => {
         </div>
 
         {/* Controls */}
+        {/* Controls */}
         <button
-          className="absolute left-2 top-1/2 -translate-y-1/2 bg-black bg-opacity-20 text-white p-2 rounded-full hover:bg-opacity-70"
+          className="absolute left-2 top-1/2 -translate-y-1/2 
+             bg-[#2CA3DB]/30 text-white p-2 rounded-full 
+             hover:bg-[#2CA3DB]/70 transition-colors duration-300"
           onClick={prevSlide}
         >
           ◀
         </button>
         <button
-          className="absolute right-2 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70"
+          className="absolute right-2 top-1/2 -translate-y-1/2 
+             bg-[#2CA3DB]/30 text-white p-2 rounded-full 
+             hover:bg-[#2CA3DB]/70 transition-colors duration-300"
           onClick={nextSlide}
         >
           ▶
@@ -86,7 +99,7 @@ const Carousel: React.FC = () => {
             <button
               key={idx}
               className={`w-3 h-3 rounded-full transition-colors duration-300 ${
-                active === idx ? "bg-white" : "bg-gray-400"
+                active === idx ? "bg-[#2CA3DB]" : "bg-[#2CA3DB]/40"
               }`}
               onClick={() => setActive(idx)}
             />

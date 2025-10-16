@@ -1,6 +1,8 @@
 import React from "react";
 import { Icons } from "@/components/icons"; // Your icon mapping
 
+import SchoolActivities from "../assets/images/schoolActivities.png";
+
 const featuresLeft = [
   {
     title: "International",
@@ -50,7 +52,9 @@ const FeaturesPage: React.FC = () => {
         Why Our School is Special
       </h2>
       <p className="text-gray-600 text-center max-w-3xl mx-auto mb-16 text-lg md:text-xl">
-        Discover the unique features that make our school an outstanding place for learning and growth. Our holistic approach ensures every student thrives academically and personally.
+        Discover the unique features that make our school an outstanding place
+        for learning and growth. Our holistic approach ensures every student
+        thrives academically and personally.
       </p>
 
       <div className="grid md:grid-cols-3 gap-8 items-center">
@@ -76,7 +80,7 @@ const FeaturesPage: React.FC = () => {
         <div className="flex justify-center">
           <img
             className="max-w-full h-auto rounded-xl shadow-lg"
-            src="https://mdbootstrap.com/img/Mockups/Transparent/Small/iphone-portfolio1.png"
+            src={SchoolActivities}
             alt="App Preview"
           />
         </div>
