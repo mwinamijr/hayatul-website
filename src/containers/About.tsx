@@ -1,5 +1,14 @@
 import React from "react";
-import { FaShare, FaChartArea, FaBook, FaPlusCircle, FaPlusSquare, FaBookDead, FaBookMedical, FaStethoscope, FaBookOpen, FaSearchDollar, FaBusinessTime, FaCompass, FaMapSigns } from "react-icons/fa";
+import {
+  FaStethoscope,
+  FaBookOpen,
+  FaSearchDollar,
+  FaBusinessTime,
+  FaCompass,
+  FaMapSigns,
+} from "react-icons/fa";
+
+import SecImage from "../assets/images/secondary.png";
 
 const AboutPage: React.FC = () => {
   const purposes = [
@@ -33,10 +42,11 @@ const AboutPage: React.FC = () => {
           Ijue taasisi ya Hayatul Islamiya Complex
         </h2>
         <p className="text-gray-600 max-w-4xl mx-auto text-lg">
-          Hayatul Islamiya Complex ni taasisi ya kiislamu iliyo chini ya
-          Baraza Kuu la Waislamu Tanzania (BAKWATA). Taasisi hii inamilikiwa kihalali
-          na wanajumuiya wa Hayatul Islamiya Complex ambao wametoa ahadi mbele ya Allah(S.W.)
-          kuitumikia na kujitolea kikamilifu ili kuweza kupata radhi zake.
+          Hayatul Islamiya Complex ni taasisi ya kiislamu iliyo chini ya Baraza
+          Kuu la Waislamu Tanzania (BAKWATA). Taasisi hii inamilikiwa kihalali
+          na wanajumuiya wa Hayatul Islamiya Complex ambao wametoa ahadi mbele
+          ya Allah(S.W.) kuitumikia na kujitolea kikamilifu ili kuweza kupata
+          radhi zake.
         </p>
       </header>
 
@@ -45,7 +55,7 @@ const AboutPage: React.FC = () => {
         <div className="md:w-5/12 mb-8 md:mb-0">
           <img
             className="rounded-xl shadow-lg w-full hover:scale-105 transition-transform duration-300"
-            src="https://images.pexels.com/photos/4226117/pexels-photo-4226117.jpeg?auto=compress&cs=tinysrgb&w=1170"
+            src={SecImage}
             alt="About Us"
           />
         </div>
@@ -77,14 +87,16 @@ const AboutPage: React.FC = () => {
           <FaCompass className="text-teal-500 w-12 h-12 mx-auto md:mx-0" />
           <h5 className="font-bold text-xl my-4">Dira</h5>
           <p className="text-gray-600">
-            Kuendeleza taasisi yenye maadili ya kiislamu inayotoa elimu, huduma za afya, na msaada kwa jamii kwa kiwango cha hali ya juu.
+            Kuendeleza taasisi yenye maadili ya kiislamu inayotoa elimu, huduma
+            za afya, na msaada kwa jamii kwa kiwango cha hali ya juu.
           </p>
         </div>
         <div className="md:w-1/2 p-6 bg-white rounded-xl shadow hover:shadow-2xl transition-shadow duration-300">
           <FaMapSigns className="text-teal-500 w-12 h-12 mx-auto md:mx-0" />
           <h5 className="font-bold text-xl my-4">Dhamira</h5>
           <p className="text-gray-600">
-            Kusaidia jamii na wanajumuiya wa Hayatul Islamiya Complex kupitia elimu, afya, na miradi ya maendeleo yenye uendelevu.
+            Kusaidia jamii na wanajumuiya wa Hayatul Islamiya Complex kupitia
+            elimu, afya, na miradi ya maendeleo yenye uendelevu.
           </p>
         </div>
       </div>

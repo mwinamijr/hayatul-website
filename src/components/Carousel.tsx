@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import carousel1 from "../assets/images/carousel001.png";
+import carousel2 from "../assets/images/carousel002.png";
+import carousel3 from "../assets/images/carousel003.png";
 
 interface Slide {
   src: string;
@@ -9,19 +12,19 @@ interface Slide {
 
 const slides: Slide[] = [
   {
-    src: "https://images.pexels.com/photos/4145193/pexels-photo-4145193.jpeg?auto=compress&cs=tinysrgb&w=1170",
+    src: carousel1,
     alt: "Students learning",
     title: "Interactive Learning",
     caption: "Engaging lessons in a modern classroom.",
   },
   {
-    src: "https://images.pexels.com/photos/256657/pexels-photo-256657.jpeg?auto=compress&cs=tinysrgb&w=1170",
+    src: carousel2,
     alt: "Children playing",
     title: "Fun & Safe Environment",
     caption: "Students thrive in a safe and enjoyable space.",
   },
   {
-    src: "https://images.pexels.com/photos/4145192/pexels-photo-4145192.jpeg?auto=compress&cs=tinysrgb&w=1170",
+    src: carousel3,
     alt: "Science experiment",
     title: "Hands-on Experience",
     caption: "Experimental learning to spark curiosity.",
@@ -53,8 +56,10 @@ const Carousel: React.FC = () => {
                 alt={slide.alt}
                 className="w-full h-64 md:h-96 object-cover"
               />
-              <div className="absolute bottom-4 left-4 bg-black bg-opacity-50 text-white p-4 rounded-md max-w-xs">
-                <h3 className="text-lg md:text-xl font-semibold">{slide.title}</h3>
+              <div className="absolute bottom-4 left-4 bg-black text-white p-4 rounded-md max-w-xs">
+                <h3 className="text-lg md:text-xl font-semibold">
+                  {slide.title}
+                </h3>
                 <p className="text-sm md:text-base">{slide.caption}</p>
               </div>
             </div>
@@ -63,7 +68,7 @@ const Carousel: React.FC = () => {
 
         {/* Controls */}
         <button
-          className="absolute left-2 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70"
+          className="absolute left-2 top-1/2 -translate-y-1/2 bg-black bg-opacity-20 text-white p-2 rounded-full hover:bg-opacity-70"
           onClick={prevSlide}
         >
           ◀
