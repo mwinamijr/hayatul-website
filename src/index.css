@@ -1,5 +1,79 @@
 @import "tailwindcss";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Colours: deep green for the institution, warm orange from the logo as the accent. Use these, not raw palette colours. */
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+
+  --color-brand: #0b5d3b;
+  --color-brand-dark: #073f28;
+  --color-brand-soft: #e7f3ec;
+  --color-accent: #e8742a;
+  --color-accent-dark: #c65c17;
+  --color-accent-soft: #fdf0e6;
+  --color-ink: #13231b;
+  --color-muted: #5b6b63;
+  --color-surface: #ffffff;
+  --color-canvas: #f6f8f6;
+  --color-line: #dfe7e2;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-canvas font-sans text-ink antialiased;
+    overflow-x: hidden;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply tracking-tight text-balance;
+  }
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-accent;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* Shared building blocks. @utility (not @layer) so they can be combined with @apply and variants. */
+@utility container-page {
+  @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+@utility btn {
+  @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-5 py-2.5 text-center text-sm font-semibold transition-colors disabled:cursor-not-allowed disabled:opacity-50;
+}
+@utility btn-primary {
+  @apply btn bg-accent text-white hover:bg-accent-dark;
+}
+@utility btn-brand {
+  @apply btn bg-brand text-white hover:bg-brand-dark;
+}
+@utility btn-outline {
+  @apply btn border border-line bg-surface text-ink hover:border-brand hover:text-brand;
+}
+@utility btn-ghost-light {
+  @apply btn border border-white/40 text-white hover:bg-white/10;
+}
+@utility card {
+  @apply rounded-2xl border border-line bg-surface shadow-sm;
+}
+@utility eyebrow {
+  @apply text-xs font-bold tracking-[0.16em] text-accent uppercase;
+}
+@utility prose-text {
+  & p + p {
+    @apply mt-4;
+  }
+}

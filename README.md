@@ -1,68 +1,49 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Hayatul Islamiya Complex – official website
 
-## Available Scripts
+The public website of the institution that runs Hayatul Islamiya Primary School and Hayatul Islamiya Secondary
+School (O-Level and A-Level), Bonga, Babati – Manyara. Pages are in Swahili.
 
-In the project directory, you can run:
+Built with React 19, TypeScript, Vite 7 and Tailwind CSS 4. Packages are installed with **pnpm** (not npm).
 
-### `npm start`
+## Run it
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```bash
+pnpm install
+pnpm dev          # http://localhost:5174, /api goes to the local API (http://127.0.0.1:8000)
+pnpm build        # type-check and build into dist/
+pnpm deploy       # build and publish to Firebase hosting
+```
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+To use another API while developing: `API_PROXY=https://api.example.com pnpm dev`.
+Production uses `VITE_API_URL` in `.env.production` (`https://api.hayatulislamiya.com`).
 
-### `npm test`
+## What comes from the school system (SIS)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The website reads these from the HISMS API (`/api/website/`, no login). Staff change them in the SIS under
+**Website** (permission `manage_website`, admins by default):
 
-### `npm run build`
+| On the website | Changed in the SIS |
+|---|---|
+| Slideshow on the home page (shows the built-in photos until pictures are uploaded) | Website > Slideshow |
+| News (Habari) | Website > News |
+| Joining forms for Primary, O-Level and A-Level (PDF downloads) | Website > Joining forms |
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Everything else (about, schools, health centre, contacts) is in the code: facts in `src/lib/site.ts`.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Folders
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+| Path | What |
+|---|---|
+| `src/pages/` | One file per page (loaded on demand) |
+| `src/components/` | Header, footer, slideshow, joining forms, news card, page blocks |
+| `src/lib/api.ts` | Reading the API |
+| `src/lib/site.ts` | Contacts, menu, subjects, A-Level combinations |
+| `src/assets/images/` | Photos, WebP, at most 1600 px wide |
+| `src/index.css` | Colours (`@theme`) and shared classes (`btn-*`, `card`, `container-page`) |
 
-### `npm run eject`
+## Rules
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- Pictures: save as WebP, at most 1600 px wide (a phone photo of 3 MB becomes about 100 KB). Large files make
+  the site slow and the repository heavy.
+- Works on phones, tablets and computers: check 360, 768 and 1280 wide, and no sideways scrolling.
+- Use the colour names from `src/index.css` (`brand`, `accent`, `ink`, `muted`, `line`...), not raw colours.
