@@ -1,13 +1,19 @@
 
-name: Deploy to Firebase Hosting (Live)
+name: Deploy Hayatul to Firebase Hosting (Live)
 
 on:
   push:
     branches:
       - main
 
+  workflow_dispatch:
+
 permissions:
   contents: read
+
+concurrency:
+  group: firebase-hosting-production
+  cancel-in-progress: true
 
 jobs:
   build_and_deploy:
@@ -29,15 +35,21 @@ jobs:
       - name: Verify versions
         run: |
           node -v
+          npm -v
           pnpm -v
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
       - name: Build application
-        run: pnpm build
+        run: pnpm run build
         env:
           VITE_DJANGO_URL: ${{ vars.VITE_DJANGO_URL }}
+
+      - name: Verify production build
+        run: |
+          test -f dist/index.html
+          echo "Hayatul production build completed successfully."
 
       - name: Deploy to Firebase Hosting
         uses: FirebaseExtended/action-hosting-deploy@v0
