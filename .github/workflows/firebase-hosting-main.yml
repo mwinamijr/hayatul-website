@@ -55,5 +55,5 @@ jobs:
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_HAYATUL_WEBSITE }}
-          projectId: hayatul-sis
+          projectId: hayatul-website
           channelId: live
