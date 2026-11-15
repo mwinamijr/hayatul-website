@@ -1,6 +1,7 @@
 import { ArrowLeft, CalendarDays, Newspaper, RefreshCw, UserRound } from "lucide-react";
 import { Link, useParams, useSearchParams } from "react-router-dom";
 
+import Comments from "@/components/Comments";
 import NewsCard, { NewsCardSkeleton } from "@/components/NewsCard";
 import { PageHero, Section } from "@/components/Page";
 import { api, apiLink, formatDate, useLoad } from "@/lib/api";
@@ -127,6 +128,7 @@ export function NewsDetail() {
                 </p>
               ))}
             </div>
+            <Comments newsId={id} />
           </>
         ) : (
           <div className="space-y-3" aria-hidden>
