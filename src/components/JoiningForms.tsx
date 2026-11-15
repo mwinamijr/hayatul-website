@@ -25,7 +25,7 @@ export default function JoiningForms({ showOlder = false }: { showOlder?: boolea
         const newest: JoiningForm | undefined = forms[0];
         return (
           <article key={level.level} className="card flex flex-col p-6">
-            <div className="mb-4 inline-flex size-12 items-center justify-center rounded-2xl bg-brand-soft text-brand">
+            <div className="mb-4 inline-flex size-12 items-center justify-center rounded-2xl bg-sky-soft text-sky-dark">
               <FileText className="size-6" aria-hidden />
             </div>
             <p className="eyebrow">{level.short}</p>

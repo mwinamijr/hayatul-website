@@ -8,7 +8,7 @@ import clinic from "@/assets/images/hospital002.webp";
 import HeroSlideshow from "@/components/HeroSlideshow";
 import JoiningForms from "@/components/JoiningForms";
 import NewsCard, { NewsCardSkeleton } from "@/components/NewsCard";
-import { Section, SectionTitle, useTitle } from "@/components/Page";
+import { Section, SectionTitle } from "@/components/Page";
 import { api, useLoad } from "@/lib/api";
 import { SITE } from "@/lib/site";
 
@@ -64,7 +64,6 @@ function LatestNews() {
 }
 
 export default function Home() {
-  useTitle("");
   return (
     <>
       <HeroSlideshow />
@@ -75,7 +74,7 @@ export default function Home() {
           <ul className="card grid grid-cols-2 divide-line p-2 lg:grid-cols-4 lg:divide-x">
             {FACTS.map(({ icon: Icon, value, label }) => (
               <li key={value} className="flex flex-col gap-2 p-3 sm:flex-row sm:items-center sm:gap-3 sm:p-5">
-                <span className="inline-flex size-11 shrink-0 items-center justify-center rounded-xl bg-brand-soft text-brand">
+                <span className="inline-flex size-11 shrink-0 items-center justify-center rounded-xl bg-sky-soft text-sky-dark">
                   <Icon className="size-5" aria-hidden />
                 </span>
                 <span className="min-w-0">
@@ -153,7 +152,7 @@ export default function Home() {
       </Section>
 
       {/* Joining forms */}
-      <Section id="forms" className="bg-brand-soft">
+      <Section id="forms" className="bg-sky-soft">
         <SectionTitle
           center
           eyebrow="Udahili"

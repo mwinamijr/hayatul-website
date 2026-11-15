@@ -2,8 +2,10 @@ import { ArrowLeft, CalendarDays, Newspaper, RefreshCw, UserRound } from "lucide
 import { Link, useParams, useSearchParams } from "react-router-dom";
 
 import NewsCard, { NewsCardSkeleton } from "@/components/NewsCard";
-import { PageHero, Section, useTitle } from "@/components/Page";
+import { PageHero, Section } from "@/components/Page";
 import { api, apiLink, formatDate, useLoad } from "@/lib/api";
+import { SITE } from "@/lib/site";
+import { useSeo } from "@/lib/seo";
 
 const PAGE_SIZE = 9;
 
@@ -68,7 +70,13 @@ export function NewsList() {
 export function NewsDetail() {
   const { id = "" } = useParams();
   const { data, loading, error, retry } = useLoad((signal) => api.newsItem(id, signal), `news-item-${id}`);
-  useTitle(data?.title ?? "Habari");
+  // The news item's own title and summary in search results and when shared (after it has loaded).
+  useSeo(
+    `/news/${id}`,
+    data ? { title: `${data.title} | ${SITE.short}`, description: (data.summary || data.content || "").slice(0, 160) } : null,
+    { image: data?.picture_url ? apiLink(data.picture_url) : undefined, type: "article" },
+    Boolean(data),
+  );
 
   const paragraphs = (data?.content ?? "").split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean);
 

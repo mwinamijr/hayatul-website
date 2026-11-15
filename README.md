@@ -47,3 +47,29 @@ Everything else (about, schools, health centre, contacts) is in the code: facts 
   the site slow and the repository heavy.
 - Works on phones, tablets and computers: check 360, 768 and 1280 wide, and no sideways scrolling.
 - Use the colour names from `src/index.css` (`brand`, `accent`, `ink`, `muted`, `line`...), not raw colours.
+
+## Being found on Google (SEO)
+
+Already in the site:
+
+- Every page has its own title and description in Swahili with the English words people search with (shule /
+  school, msingi / primary, sekondari / secondary, Babati, Manyara, Tanzania): `src/lib/seo.ts`. News items use
+  their own title and summary.
+- `index.html` describes the institution and both schools for search engines (schema.org: name, Bonga - Babati -
+  Manyara - TZ address, phones, e-mail, social pages), says where it is (TZ-26 Manyara) and has a plain-text
+  version for search engines that do not run JavaScript.
+- `pnpm build` writes `sitemap.xml` and `robots.txt` for the address in `VITE_SITE_URL` (`.env.production`,
+  now `https://hayatulislamiya.com`). Change it there if the site moves; add a new page to `SITEMAP_PAGES` in
+  `vite.config.ts` and to `PAGES` in `src/lib/seo.ts`.
+- Sharing a link on WhatsApp / Facebook shows a photo (`public/og-image.jpg`) and the page's summary.
+
+To do once by the owner (these make the biggest difference in Tanzania):
+
+1. **Google Business Profile** for each school (business.google.com): name, "School" category, exact map pin at
+   Bonga, phone, opening hours, photos, and this website's address. This is what shows the school on Google Maps
+   and in "shule Babati" searches.
+2. **Google Search Console** (search.google.com/search-console): add the domain, verify it (a DNS record at the
+   domain provider), then submit `https://hayatulislamiya.com/sitemap.xml`.
+3. Put the website's address on the schools' Facebook, Instagram, YouTube and WhatsApp Business pages, and ask
+   local listings (district education office, school directories) to link to it.
+4. Add news regularly (SIS > Website > News): new pages and fresh dates help ranking.

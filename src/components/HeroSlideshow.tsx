@@ -85,7 +85,7 @@ export default function HeroSlideshow() {
       <div className="absolute inset-0 -z-10 bg-gradient-to-r from-brand-dark/95 via-brand-dark/75 to-brand-dark/30" aria-hidden />
 
       <div className="container-page flex min-h-[540px] flex-col justify-center py-16 sm:min-h-[600px] lg:min-h-[640px]">
-        <p className="eyebrow mb-4 text-accent">{SITE.name} · Tangu {SITE.founded}</p>
+        <p className="eyebrow mb-4 text-sky">{SITE.name} · Tangu {SITE.founded}</p>
         <div key={slide.key} className="max-w-2xl" aria-live="polite">
           <h1 className="text-3xl leading-tight font-extrabold sm:text-5xl lg:text-6xl">{slide.title}</h1>
           {slide.caption && <p className="mt-5 max-w-xl text-base leading-relaxed text-white/85 sm:text-lg">{slide.caption}</p>}
@@ -115,7 +115,7 @@ export default function HeroSlideshow() {
                   aria-current={i === index}
                   className="flex h-11 items-center"
                 >
-                  <span className={`block h-1.5 rounded-full transition-all ${i === index ? "w-8 bg-accent" : "w-4 bg-white/40"}`} />
+                  <span className={`block h-1.5 rounded-full transition-all ${i === index ? "w-8 bg-sky" : "w-4 bg-white/40"}`} />
                 </button>
               ))}
             </div>

@@ -62,7 +62,7 @@ export default function About() {
         <div className="grid gap-5 sm:grid-cols-2">
           {PURPOSES.map(({ icon: Icon, title, text }) => (
             <div key={title} className="card flex gap-4 p-6">
-              <span className="inline-flex size-12 shrink-0 items-center justify-center rounded-2xl bg-brand-soft text-brand">
+              <span className="inline-flex size-12 shrink-0 items-center justify-center rounded-2xl bg-sky-soft text-sky-dark">
                 <Icon className="size-6" aria-hidden />
               </span>
               <div>

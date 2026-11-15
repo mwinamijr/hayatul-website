@@ -1,15 +1,7 @@
 import { ChevronRight } from "lucide-react";
-import { useEffect, type ReactNode } from "react";
+import type { ReactNode } from "react";
 import { Link } from "react-router-dom";
 
-import { SITE } from "@/lib/site";
-
-/** Sets the browser tab title for a page. */
-export function useTitle(title: string) {
-  useEffect(() => {
-    document.title = title ? `${title} | ${SITE.name}` : `${SITE.name} | Bonga, Babati`;
-  }, [title]);
-}
 
 /** The green banner at the top of every inner page. */
 export function PageHero({
@@ -25,9 +17,8 @@ export function PageHero({
   image?: string;
   children?: ReactNode;
 }) {
-  useTitle(crumb ?? title);
   return (
-    <section className="relative isolate overflow-hidden bg-brand-dark text-white">
+    <section className="relative isolate overflow-hidden border-b-4 border-sky bg-brand-dark text-white">
       {image && <img src={image} alt="" className="absolute inset-0 -z-10 size-full object-cover opacity-25" />}
       <div className="absolute inset-0 -z-10 bg-brand-dark/70" aria-hidden />
       <div className="container-page py-12 sm:py-16 lg:py-20">
@@ -79,7 +70,7 @@ export function TickList({ items, columns = 1 }: { items: readonly string[]; col
     <ul className={`grid gap-2.5 ${columns === 2 ? "sm:grid-cols-2" : ""}`}>
       {items.map((item) => (
         <li key={item} className="flex items-start gap-3">
-          <span className="mt-1.5 size-2 shrink-0 rounded-full bg-accent" aria-hidden />
+          <span className="mt-1.5 size-2 shrink-0 rounded-full bg-sky-dark" aria-hidden />
           <span>{item}</span>
         </li>
       ))}

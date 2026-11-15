@@ -6,7 +6,7 @@ import { NAV, SITE, telLink } from "@/lib/site";
 
 const linkClass = ({ isActive }: { isActive: boolean }) =>
   `rounded-full px-3 py-2 text-sm font-semibold transition-colors ${
-    isActive ? "bg-brand-soft text-brand" : "text-ink hover:text-brand"
+    isActive ? "bg-sky-soft text-brand" : "text-ink hover:text-brand"
   }`;
 
 export default function Header() {
@@ -59,7 +59,7 @@ export default function Header() {
 
   return (
     // Solid background, no backdrop-blur: a blur would make the fixed phone menu below size itself to the header.
-    <header className={`sticky top-0 z-40 bg-surface transition-shadow ${scrolled ? "shadow-md" : ""}`}>
+    <header className={`sticky top-0 z-40 border-b-4 border-sky bg-surface transition-shadow ${scrolled ? "shadow-md" : ""}`}>
       {/* Top strip: phone and e-mail (tablet and up) */}
       <div className="hidden bg-brand-dark text-white/90 md:block">
         <div className="container-page flex h-9 items-center justify-between text-xs">

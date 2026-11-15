@@ -23,7 +23,7 @@ const EXTERNAL = [
 
 export default function Footer() {
   return (
-    <footer className="mt-auto bg-brand-dark text-white/80">
+    <footer className="mt-auto border-t-4 border-sky bg-brand-dark text-white/80">
       <div className="container-page grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
         <div className="space-y-4">
           <div className="flex items-center gap-3">

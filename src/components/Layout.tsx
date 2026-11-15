@@ -1,8 +1,20 @@
 import { Suspense, useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 
+import { applySeo, seoForPath } from "@/lib/seo";
+
 import Footer from "./Footer";
 import Header from "./Header";
+
+/** Title, description, canonical address and sharing card of the page (src/lib/seo.ts). */
+function PageHead() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    const path = pathname.replace(/\/+$/, "") || "/";
+    applySeo(path, seoForPath(path));
+  }, [pathname]);
+  return null;
+}
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -22,6 +34,7 @@ export default function Layout() {
       <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:rounded-full focus:bg-surface focus:px-4 focus:py-2">
         Ruka hadi maudhui
       </a>
+      <PageHead />
       <ScrollToTop />
       <Header />
       <main id="main" className="flex-1">

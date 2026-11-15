@@ -10,6 +10,10 @@
   --color-accent: #e8742a;
   --color-accent-dark: #c65c17;
   --color-accent-soft: #fdf0e6;
+  /* Light blue from the logo's outline (#AEDFE6), with a soft tint for backgrounds and a deeper one for text. */
+  --color-sky: #aedfe6;
+  --color-sky-soft: #ecf8fa;
+  --color-sky-dark: #1d7f95;
   --color-ink: #13231b;
   --color-muted: #5b6b63;
   --color-surface: #ffffff;

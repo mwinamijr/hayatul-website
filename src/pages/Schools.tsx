@@ -137,7 +137,7 @@ export function SecondarySchool() {
         />
         <ul className="grid grid-cols-3 gap-3 sm:grid-cols-5 lg:grid-cols-9">
           {A_LEVEL_COMBINATIONS.map((c) => (
-            <li key={c} className="card flex h-16 items-center justify-center text-lg font-extrabold text-brand">
+            <li key={c} className="card flex h-16 items-center justify-center border-sky bg-sky-soft text-lg font-extrabold text-sky-dark">
               {c}
             </li>
           ))}
